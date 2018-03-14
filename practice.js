@@ -92,15 +92,15 @@ multiply(4, 3, function(answer){
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-function contains(arr,name,cb){
-  if(arr.indexOf(name)=== 0){
-    cb(true)
+function contains(names, checkExist, cb) {
+  for (var i = 0; i < names.length; i++) {
+      if (names[i] === checkExist) {
+        cb(true);
+      }
+    }
+    cb(false);
   }
-  else {
-    cb(false)
-  }
-};
-
+  
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
   if(result === true){
